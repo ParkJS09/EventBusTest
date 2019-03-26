@@ -13,7 +13,7 @@ import org.greenrobot.eventbus.EventBus;
 
 public class Main2Activity extends AppCompatActivity {
 
-    private Button btn_callbacktest;
+    private Button btn_callbacktest, btn_callBackTest2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +31,18 @@ public class Main2Activity extends AppCompatActivity {
         });
 
         btn_callbacktest = findViewById(R.id.btn_callBackTest);
+        btn_callBackTest2 = findViewById(R.id.btn_callBackTest2);
         btn_callbacktest.setOnClickListener(new View.OnClickListener() {
             @Override
                 public void onClick(View v) {
                 EventBus.getDefault().post(new EventTest("TEST"));
+            }
+        });
+
+        btn_callBackTest2.setOnClickListener(new View.OnClickListener() {
+            @Override
+                public void onClick(View v) {
+                EventBus.getDefault().post(new EventTest2("TEST"));
             }
         });
     }
